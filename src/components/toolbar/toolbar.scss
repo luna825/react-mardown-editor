@@ -1,0 +1,146 @@
+.toolbar{
+  ul {
+    list-style: none;
+    background-color: #fff;
+    margin: 0;
+    padding: 0 5px;
+  }
+  .leftMenu li{
+    float: left;
+  }
+  .rightMenu li{
+    float: right;
+  }
+  .menu {
+    margin: 0 2px;
+    a {
+      cursor: pointer;
+      display: block;
+      width: 20px;
+      height: 20px;
+      border: 5px solid #fff;
+      background-repeat: no-repeat;
+      background-size: 380px 60px;
+      background-image: url(./editor@2x.png);
+      box-sizing: content-box;
+      overflow: hidden;
+      text-indent: 110%;
+      white-space: nowrap;
+      text-transform: capitalize;
+    }
+    .bold {
+      background-position : 0 0;
+      &:hover {
+        background-position : 0 -40px;
+      }
+    }
+    .italics {
+      background-position: -20px 0;
+      &:hover {
+        background-position: -20px -40px;
+      }
+    }
+    .link {
+      background-position: -40px 0;
+      &:hover {
+        background-position: -40px -40px;
+      }
+    }
+    .quote {
+      background-position: -60px 0;
+      &:hover {
+        background-position: -60px -40px;
+      }
+    }
+    .code {
+      background-position: -80px 0;
+      &:hover {
+        background-position: -80px -40px;
+      }
+    }
+    .image {
+      background-position: -100px 0;
+      &:hover {
+        background-position: -100px -40px;
+      }
+    }
+    .olist {
+      background-position: -120px 0;
+      &:hover {
+        background-position: -120px -40px;
+      }
+    }
+    .ulist {
+      background-position: -140px 0;
+      &:hover {
+        background-position: -140px -40px;
+      }
+    }
+    .head {
+      background-position: -160px 0;
+      &:hover {
+        background-position: -160px -40px;
+      }
+    }
+    .hr {
+      background-position: -180px 0;
+      &:hover {
+        background-position: -180px -40px;
+      }
+    }
+    .undo {
+      background-position: -200px 0;
+      &:hover {
+        background-position: -200px -40px;
+      }
+    }
+    .redo {
+      background-position: -220px 0;
+      &:hover {
+        background-position: -220px -40px;
+      }
+    }
+    .help {
+      background-position: -300px 0;
+      &:hover {
+        background-position: -300px -40px;
+      }
+    }
+    .preview {
+      background-position: -360px 0;
+      &:hover {
+        background-position: -360px -40px;
+      }
+    }
+    .muted {
+      background-position: -340px 0;
+      &:hover {
+        background-position: -340px -40px;
+      }
+    }
+    .edit {
+      background-position: -320px 0;
+      &:hover {
+        background-position: -320px -40px;
+      }
+    }
+    .full {
+      background-position: -240px 0;
+      &:hover {
+        background-position: -240px -40px;
+      }
+    }
+  }
+  .divider {
+    margin: 5px 4px;
+    width: 0;
+    height: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    border-right: 1px solid #ddd;
+    text-indent: 110%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-transform: capitalize;
+  }
+}

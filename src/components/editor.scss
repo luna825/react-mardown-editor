@@ -1,0 +1,14 @@
+.editor {
+  position: relative;
+  z-index: 1;
+  min-height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  .toolbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 106;
+    border-bottom: 1px solid #ccc;
+  }
+}
