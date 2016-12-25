@@ -1,14 +1,290 @@
 .editor {
+  * {
+    box-sizing: border-box;
+  }
+
   position: relative;
   z-index: 1;
-  min-height: 300px;
   border: 1px solid #ccc;
   border-radius: 3px;
-  .toolbar {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 106;
-    border-bottom: 1px solid #ccc;
+}
+
+// 工具条样式
+.toolbar{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 106;
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+  @media (max-width: 750px){
+    display: none;
   }
+  ul {
+    list-style: none;
+    background-color: #fff;
+    margin: 0;
+    padding: 0 5px;
+  }
+  .leftMenu li{
+    float: left;
+  }
+  .rightMenu li{
+    float: right;
+  }
+  .menu {
+    margin: 0 2px;
+    a {
+      cursor: pointer;
+      display: block;
+      width: 20px;
+      height: 20px;
+      border: 5px solid #fff;
+      background-repeat: no-repeat;
+      background-size: 380px 60px;
+      background-image: url(./editor@2x.png);
+      box-sizing: content-box;
+      overflow: hidden;
+      text-indent: 110%;
+      white-space: nowrap;
+      text-transform: capitalize;
+    }
+
+    .bold {
+      background-position : 0 0;
+      &:hover {
+        background-position : 0 -40px;
+      }
+    }
+    .italics {
+      background-position: -20px 0;
+      &:hover {
+        background-position: -20px -40px;
+      }
+    }
+    .link {
+      background-position: -40px 0;
+      &:hover {
+        background-position: -40px -40px;
+      }
+    }
+    .quote {
+      background-position: -60px 0;
+      &:hover {
+        background-position: -60px -40px;
+      }
+    }
+    .code {
+      background-position: -80px 0;
+      &:hover {
+        background-position: -80px -40px;
+      }
+    }
+    .image {
+      background-position: -100px 0;
+      &:hover {
+        background-position: -100px -40px;
+      }
+    }
+    .olist {
+      background-position: -120px 0;
+      &:hover {
+        background-position: -120px -40px;
+      }
+    }
+    .ulist {
+      background-position: -140px 0;
+      &:hover {
+        background-position: -140px -40px;
+      }
+    }
+    .head {
+      background-position: -160px 0;
+      &:hover {
+        background-position: -160px -40px;
+      }
+    }
+    .hr {
+      background-position: -180px 0;
+      &:hover {
+        background-position: -180px -40px;
+      }
+    }
+    .undo {
+      background-position: -200px 0;
+      &:hover {
+        background-position: -200px -40px;
+      }
+    }
+    .redo {
+      background-position: -220px 0;
+      &:hover {
+        background-position: -220px -40px;
+      }
+    }
+    .help {
+      background-position: -300px 0;
+      &:hover {
+        background-position: -300px -40px;
+      }
+    }
+    .preview {
+      background-position: -360px 0;
+      &:hover {
+        background-position: -360px -40px;
+      }
+    }
+    .muted {
+      background-position: -340px 0;
+      &:hover {
+        background-position: -340px -40px;
+      }
+    }
+    .edit {
+      background-position: -320px 0;
+      &:hover {
+        background-position: -320px -40px;
+      }
+    }
+    .full {
+      background-position: -240px 0;
+      &:hover {
+        background-position: -240px -40px;
+      }
+    }
+    .unfull {
+      background-position: -260px 0;
+      &:hover{
+        background-position: -260px -40px;
+      }
+    }
+    .active {
+      background-color: #f6f6f6;
+      border-color: #f6f6f6;
+      cursor: default;
+      background-position-y: -20px;
+      &:hover {
+        background-position-y:-20px;
+      }
+    }
+
+  }
+  .divider {
+    margin: 5px 4px;
+    width: 0;
+    height: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    border-right: 1px solid #ddd;
+    text-indent: 110%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-transform: capitalize;
+  }
+}
+
+
+// 编辑区样式
+
+.wrap{
+  position: relative;
+  overflow: hidden;
+  height: auto;
+  min-height: 200px;
+  padding: 0;
+
+  .editarea {
+    overflow: auto;
+    width:50%;
+    margin-top: 31px;
+    resize: none;
+    background-color: #fff;
+    border: none;
+    padding: 6px 12px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    &:focus {
+      outline: none;
+    }
+    font-size: 14px;
+    line-height: 1.5;
+    color:#555;
+    transition: width .3s ease;
+    @media (max-width:750px){
+      margin-top:0;
+      width:100%
+    }
+  }
+
+  .previewarea {
+    position: absolute;
+    left:50%;
+    top:0;
+    bottom: 0;
+    width:50%;
+    overflow: auto;
+    margin-top: 31px;
+    padding:6px 12px;
+    background-color: #f6f6f6;
+    border-left: 1px solid #ccc;
+    word-wrap: break-word;
+    font-size: 14px;
+    line-height: 1.5;
+    transition: all .3s ease;
+    @media (max-width:750px){
+      display: none;
+    }
+  } 
+}
+
+
+.edit{
+  .editarea {
+    width: 100%;
+  }
+  .previewarea {
+    left: 100%;
+    width: 100%;
+  }
+}
+
+.preview {
+  .editarea {
+    @media(max-width:750px){
+      width: 100%;
+    }
+  }
+  .previewarea {
+    left: 0;
+    width: 100%;
+  }
+}
+
+.fullpage {
+  position: fixed;
+  top: 0;
+  left:  0;
+  z-index: 999;
+  margin-top: 0;
+  border: none;
+  width: 100%;
+  height: 100vh;
+  background-color: #f6f6f6;
+  .edit-container, .wrap {
+    height: 100%;
+  }
+}
+
+
+.resize{
+  box-sizing: border-box;
+  position:absolute;
+  left: 50%;
+  width: 120px;
+  height: 4px;
+  transform: translateX(-50%);
+  border-top:1px solid #ccc;
+  border-bottom:1px solid #ccc;
+  margin-top:3px;
+  overflow: hidden;
+  cursor: row-resize;
 }
